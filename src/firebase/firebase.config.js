@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBwzuX2j-Z2fgKFcrc2czO-xZWZgmPxvZA",
-  authDomain: "moon-portfolio-591f3.firebaseapp.com",
-  projectId: "moon-portfolio-591f3",
-  storageBucket: "moon-portfolio-591f3.appspot.com",
-  messagingSenderId: "893134058152",
-  appId: "1:893134058152:web:d24f6c875206e334e4489d",
+  apiKey: process.env.NEXT_PUBLIC_apiKey,
+  authDomain: process.env.NEXT_PUBLIC_authDomain,
+  projectId: process.env.NEXT_PUBLIC_projectId,
+  storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+  appId: process.env.NEXT_PUBLIC_appId,
 };
 
 // Initialize Firebase

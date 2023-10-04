@@ -1,8 +1,12 @@
+import getBlog from "@/utils/getBlog";
 import React from "react";
 
-const page = () => {
+const page = async () => {
+  const blogs = await getBlog();
+  console.log(blogs);
   return (
     <div>
+      <h1>{blogs[1].title}</h1>
       <div
         id="view"
         class="h-full w-screen flex flex-row"

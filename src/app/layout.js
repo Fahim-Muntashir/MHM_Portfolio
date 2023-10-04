@@ -1,4 +1,4 @@
-import { SearchContextProvider } from "@/app/context/search";
+import AuthProvider from "@/providers/AuthProvider";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -11,10 +11,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <SearchContextProvider>
+    <AuthProvider>
       <html lang="en">
         <body className={inter.className}>{children}</body>
       </html>
-    </SearchContextProvider>
+    </AuthProvider>
   );
 }

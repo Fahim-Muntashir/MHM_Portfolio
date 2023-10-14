@@ -69,7 +69,7 @@ const About = () => {
               >
                 Life's brevity serves as a powerful reminder: cherish every
                 moment with a positive outlook, for each fleeting second holds
-                the potential to infuse our lives with joy and meaning.
+                the potential to infuse our lives with joy and meaning.......
               </motion.p>
               {/* States*/}
 
@@ -78,7 +78,7 @@ const About = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.6 }}
-                className=" xl:block bg-accent hover:bg-accent-hover rounded w-full h-16 uppercase font font-medium text-white tracking-[2px] text-[13px] max-w-[184px]"
+                className=" xl:block  rounded w-full uppercase font  text-accent hover:text-red-700 font-bold tracking-[2px] text-[13px] max-w-[184px]"
               >
                 See More in Details
               </motion.button>

@@ -10,9 +10,7 @@ const Blog = () => {
       <h1
         tabindex="0"
         class="focus:outline-none text-5xl text-center f-m-w text-indigo-700 dark:text-indigo-400 font-bold pt-0"
-      >
-        Our Blogs
-      </h1>
+      ></h1>
       <div class="pt-14 xl:px-0 px-4">
         <div class="w-full lg:flex">
           <div class="lg:w-1/2">

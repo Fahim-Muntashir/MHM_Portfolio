@@ -66,11 +66,37 @@ const Hero = () => {
               viewport={{ once: false, amount: 0.8 }}
               className="flex gap-x-3 justify-center xl:justify-start xl:gap-x-6"
             >
-              <BsFacebook className="social-icon text-3xl text-blue-600 hover:text-blue-800" />
-              <BsInstagram className="social-icon text-3xl text-purple-600 hover:text-purple-800" />
-              <BsLinkedin className="social-icon text-3xl text-indigo-600 hover:text-indigo-800" />
-              <FiYoutube className="social-icon text-3xl text-red-600 hover:text-red-800" />
-              <SiGooglescholar className="text-3xl text-green-600 hover:text-green-800" />
+              <a href="https://www.facebook.com/staywithmoon" target="_blank">
+                <BsFacebook className="social-icon text-3xl text-blue-600 hover:text-blue-800" />
+              </a>
+              <a
+                href="https://www.instagram.com/mahmudul_hasan_moon/"
+                target="_blank"
+              >
+                {" "}
+                <BsInstagram className="social-icon text-3xl text-purple-600 hover:text-purple-800" />
+              </a>
+              <a
+                href="https://au.linkedin.com/in/mahmudul-hasan-moon"
+                target="_blank"
+              >
+                {" "}
+                <BsLinkedin className="social-icon text-3xl text-indigo-600 hover:text-indigo-800" />
+              </a>
+              <a
+                href="https://www.youtube.com/@MahmudulHasanMoon"
+                target="_blank"
+              >
+                {" "}
+                <FiYoutube className="social-icon text-3xl text-red-600 hover:text-red-800" />
+              </a>
+              <a
+                href="https://scholar.google.com/citations?user=TRKmJkEAAAAJ&hl=en"
+                target="_blank"
+              >
+                {" "}
+                <SiGooglescholar className="text-3xl text-green-600 hover:text-green-800" />
+              </a>
             </motion.div>
           </div>
           {/* img  car*/}

@@ -1,12 +1,11 @@
 "use client";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Link } from "react-scroll";
 import { useMediaQuery } from "react-responsive";
 // icons
 
 import { BiMenuAltRight, BiX } from "react-icons/bi";
-import { SearchContext } from "../context/search";
 
 const Header = () => {
   // Initialize state variables separately

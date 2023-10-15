@@ -1,172 +1,216 @@
 import React from "react";
 
-const Blog = () => {
+const getBlogs = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/blogs", {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error("Faild to fetch Blogs");
+    }
+    return res.json();
+  } catch (error) {
+    console.log("Error loading Blogs: ", error);
+  }
+};
+
+const Blog = async () => {
+  const { blogs } = await getBlogs();
+  console.log(blogs);
   return (
-    <div
-      role="article"
-      tabindex="0"
-      class="focus:outline-none container mx-auto py-8 px-4"
-    >
-      <h1
-        tabindex="0"
-        class="focus:outline-none text-5xl text-center f-m-w text-indigo-700 dark:text-indigo-400 font-bold pt-0"
-      ></h1>
-      <div class="pt-14 xl:px-0 px-4">
-        <div class="w-full lg:flex">
-          <div class="lg:w-1/2">
-            <img
-              tabindex="0"
-              role="img"
-              aria-label=" Beautiful italy street"
-              src="https://cdn.tuk.dev/assets/components/111220/blg-17/blog1.png"
-              class="focus:outline-none w-full"
-              alt="Beautiful italy street"
-            />
-            <div class="mt-8 lg:mb-0 mb-8">
-              <h2
-                tabindex="0"
-                class="focus:outline-none dark:text-white f-m-m text-2xl font-semibold leading-7"
-              >
-                Beautiful Italy, Travel Blog
-              </h2>
-              <p
-                tabindex="0"
-                class="focus:outline-none dark:text-white text-base f-m-m leading-loose mt-2"
-              >
-                The emerge of internet of Things has brought in, rather
-                urgently, a need for low-cost security technology. While
-                passwords and other such forms of encription are software base,
-                there is also a need for security level.
-              </p>
-              <div class="mt-6">
-                <div>
-                  <a
-                    class="hover:text-indigo-900 dark:hover:text-indigo-500 text-indigo-700 dark:text-indigo-400 underline text-base font-semibold f-m-m"
-                    role="link"
-                    href="javascript:void(0)"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="lg:w-1/2 lg:ml-8">
-            <div class="lg:flex items-start mb-8">
-              <img
-                tabindex="0"
-                role="img"
-                aria-label="bag on a table"
-                alt="bag on table"
-                src="https://cdn.tuk.dev/assets/components/111220/blg-17/blog2.png"
-                class="focus:outline-none w-full"
-              />
-              <div class="lg:ml-6">
-                <h3
-                  tabindex="0"
-                  class="focus:outline-none dark:text-white f-m-m text-2xl font-semibold leading-7 lg:mt-0 mt-8"
-                >
-                  A Broken Backpack
-                </h3>
-                <p
-                  tabindex="0"
-                  class="focus:outline-none dark:text-white text-base f-m-m leading-loose mt-2"
-                >
-                  The emerge of internet of Things has brought in, rather
-                  urgently, a need for low-cost security technology. While
-                  passwords and other such forms of encription are software
-                  base, there is also a need for security level.{" "}
+    <div className="bg-w w-full shadow-inner">
+      <div className="text-center my-10 py-20">
+        {" "}
+        <h1 className="text-2xl font-bold">
+          Some of My Interestering Blogs
+        </h1>{" "}
+        <p>
+          Embark on a reading adventure as you delve into some of my most
+          awesome blog posts.
+        </p>
+      </div>
+      <div class="lg:flex items-stretch md:mt-12 mt-8 container mx-auto">
+        <div class="lg:w-full">
+          <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
+            <div class="sm:w-full relative">
+              <div>
+                <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
+                  12 April 2021
                 </p>
-                <div class="mt-4">
+                <div class="absolute bottom-0 left-0 p-6">
+                  <h2 class="text-xl font-semibold 5 text-white">
+                    The Decorated Ways
+                  </h2>
+                  <p class="text-base leading-4 text-white mt-2">
+                    Dive into minimalism
+                  </p>
                   <a
-                    class="hover:text-indigo-900 dark:hover:text-indigo-500 text-indigo-700 dark:text-indigo-400 underline text-base font-semibold f-m-m"
-                    role="link"
                     href="javascript:void(0)"
+                    class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline"
                   >
-                    Read More
+                    <p class="pr-2 text-sm font-medium leading-none">
+                      Read More
+                    </p>
+                    <svg
+                      class="fill-stroke"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.75 12.5L10.25 8L5.75 3.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                   </a>
                 </div>
               </div>
-            </div>
-            <div class="lg:flex items-start mb-8">
               <img
-                tabindex="0"
-                role="img"
-                aria-label="car in desert"
-                alt="car in desert"
-                src="https://cdn.tuk.dev/assets/components/111220/blg-17/blog3.png"
-                class="focus:outline-none w-full"
+                src="https://i.ibb.co/DYxtCJq/img-1.png"
+                class="w-full"
+                alt="chair"
               />
-              <div class="lg:ml-6">
-                <h3
-                  tabindex="0"
-                  class="focus:outline-none dark:text-white f-m-m text-2xl font-semibold leading-7 lg:mt-0 mt-8"
-                >
-                  My life’s a Movie
-                </h3>
-                <p
-                  tabindex="0"
-                  class="focus:outline-none dark:text-white text-base f-m-m leading-loose mt-2"
-                >
-                  The emerge of internet of Things has brought in, rather
-                  urgently, a need for low-cost security technology. While
-                  passwords and other such forms of encription are software
-                  base, there is also a need for security level.
-                </p>
-                <div class="mt-4">
-                  <a
-                    class="hover:text-indigo-900 dark:hover:text-indigo-500 text-indigo-700 dark:text-indigo-400 underline text-base font-semibold f-m-m"
-                    role="link"
-                    href="javascript:void(0)"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
             </div>
-            <div class="lg:flex items-start mb-8">
-              <img
-                tabindex="0"
-                role="img"
-                aria-label="man with camel"
-                alt="man with camel"
-                src="https://cdn.tuk.dev/assets/components/111220/blg-17/blog4.png"
-                class="focus:outline-none w-full"
-              />
-              <div class="lg:ml-6">
-                <h3
-                  tabindex="0"
-                  class="focus:outline-none dark:text-white -m-m text-2xl font-semibold leading-7 lg:mt-0 mt-8"
-                >
-                  Lilii’s Travel Plans
-                </h3>
-                <p
-                  tabindex="0"
-                  class="focus:outline-none dark:text-white text-base f-m-m leading-loose mt-2"
-                >
-                  The emerge of internet of Things has brought in, rather
-                  urgently, a need for low-cost security technology. While
-                  passwords and other such forms of encription are software
-                  base, there is also a need for security level.
+            <div class="sm:w-full sm:mt-0 mt-4 relative">
+              <div>
+                <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
+                  12 April 2021
                 </p>
-                <div class="mt-4">
+                <div class="absolute bottom-0 left-0 p-6">
+                  <h2 class="text-xl font-semibold 5 text-white">
+                    The Decorated Ways
+                  </h2>
+                  <p class="text-base leading-4 text-white mt-2">
+                    Dive ffinto minimalism
+                  </p>
                   <a
-                    class="hover:text-indigo-900 dark:hover:text-indigo-500 text-indigo-700 dark:text-indigo-400 underline text-base font-semibold f-m-m"
-                    role="link"
                     href="javascript:void(0)"
+                    class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline"
                   >
-                    Read More
+                    <p class="pr-2 text-sm font-medium leading-none">
+                      Read More
+                    </p>
+                    <svg
+                      class="fill-stroke"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.75 12.5L10.25 8L5.75 3.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                   </a>
                 </div>
               </div>
+              <img
+                src="https://i.ibb.co/3C5HvxC/img-2.png"
+                class="w-full"
+                alt="wall design"
+              />
+            </div>
+            <div class="sm:w-full relative">
+              <div>
+                <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
+                  12 April 2021
+                </p>
+                <div class="absolute bottom-0 left-0 p-6">
+                  <h2 class="text-xl font-semibold 5 text-white">
+                    The Decorated Ways
+                  </h2>
+                  <p class="text-base leading-4 text-white mt-2">
+                    Dive into minimalism
+                  </p>
+                  <a
+                    href="javascript:void(0)"
+                    class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline"
+                  >
+                    <p class="pr-2 text-sm font-medium leading-none">
+                      Read More
+                    </p>
+                    <svg
+                      class="fill-stroke"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.75 12.5L10.25 8L5.75 3.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <img
+                src="https://i.ibb.co/DYxtCJq/img-1.png"
+                class="w-full"
+                alt="chair"
+              />
+            </div>
+            <div class="sm:w-full sm:mt-0 mt-4 relative">
+              <div>
+                <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
+                  12 April 2021
+                </p>
+                <div class="absolute bottom-0 left-0 p-6">
+                  <h2 class="text-xl font-semibold 5 text-white">
+                    The Decorated Ways
+                  </h2>
+                  <p class="text-base leading-4 text-white mt-2">
+                    Dive ffinto minimalism
+                  </p>
+                  <a
+                    href="javascript:void(0)"
+                    class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline"
+                  >
+                    <p class="pr-2 text-sm font-medium leading-none">
+                      Read More
+                    </p>
+                    <svg
+                      class="fill-stroke"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.75 12.5L10.25 8L5.75 3.5"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <img
+                src="https://i.ibb.co/3C5HvxC/img-2.png"
+                class="w-full"
+                alt="wall design"
+              />
             </div>
           </div>
         </div>
-      </div>
-      <div class="flex items-center justify-center my-16 w-full">
-        <button class="border border-indigo-700 focus:bg-gray-200 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 border-2 lg:text-2xl md:text-lg text-sm rounded f-m-m font-semibold text-indigo-700 focus:outline-none lg:px-12 px-6 lg:py-6 py-3 xl:leading-4 hover:bg-gray-200">
-          Browse More
-        </button>
       </div>
     </div>
   );

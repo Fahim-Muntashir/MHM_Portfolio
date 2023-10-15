@@ -56,10 +56,10 @@ export default function RootLayout({ children }) {
           </li>
           <li>
             <a
-              href="#"
+              href="/dashboard/certificate"
               className="flex bg-slate-900 border-blue-300 my-4 py-1 rounded text-white items-center justify-center"
             >
-              amar
+              Certificate
             </a>
           </li>
           <li>

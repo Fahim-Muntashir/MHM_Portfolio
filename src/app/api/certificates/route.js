@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import Certificates from "../../../../models/certificates";
 
 const { default: connectMongoDB } = require("../../../../libs/mongodb");
@@ -11,8 +12,8 @@ export async function POST(request) {
 
 export async function GET() {
   await connectMongoDB();
-  const certificates = await Certificates.find();
-  return NextResponse.json({ certificates });
+  const certificate = await Certificates.find();
+  return NextResponse.json({ certificate });
 }
 
 export async function Delete(request) {

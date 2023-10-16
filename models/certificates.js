@@ -12,7 +12,7 @@ const certificatesSchema = new Schema(
 );
 
 const Certificates =
-  mongoose.models.certificates ||
+  mongoose.models.Certificates ||
   mongoose.model("Certificates", certificatesSchema);
 
 export default Certificates;

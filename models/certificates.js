@@ -10,9 +10,7 @@ const certificatesSchema = new Schema(
     timestamps: true,
   }
 );
-
-const Certificates =
+const Certificate =
   mongoose.models.Certificates ||
   mongoose.model("Certificates", certificatesSchema);
-
-export default Certificates;
+export default Certificate;

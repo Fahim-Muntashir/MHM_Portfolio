@@ -70,7 +70,7 @@ const page = async () => {
                 Read Blog
               </a>
             </div>
-            <RemoveBtn id={blogItem._id} />
+            <RemoveBtn id={blogItem._id} routeName="blogs" />
             <Link
               href={`/dashboard/editblog/${blogItem._id}`}
               class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"

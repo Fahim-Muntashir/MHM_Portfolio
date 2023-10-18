@@ -1,3 +1,5 @@
+import RemoveCertificate from "@/app/components/servercomponents/RemoveCertificate";
+
 const getCertificates = async () => {
   try {
     const res = await fetch("http://localhost:3000/api/certificates", {
@@ -20,7 +22,12 @@ export default async function page() {
   return (
     <>
       {certificate && certificate.length > 0 ? (
-        certificate.map((t, index) => <h1 key={index}> {t.title}</h1>)
+        certificate.map((t, index) => (
+          <div>
+            <h1 key={index}> {t._id}</h1>
+            <RemoveCertificate id={t._id}></RemoveCertificate>
+          </div>
+        ))
       ) : (
         <p>No certificates found.</p>
       )}

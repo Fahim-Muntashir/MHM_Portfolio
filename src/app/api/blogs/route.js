@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import connectMongoDB from "../../../../libs/mongodb";
 import Blog from "../../../../models/blog";
 
+// Error Tips :
+
 export async function POST(request) {
   const { title, description, imgLink } = await request.json();
   await connectMongoDB();

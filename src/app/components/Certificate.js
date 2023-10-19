@@ -22,7 +22,7 @@ const certificate = () => {
                 greater heights."
               </p>
               <button
-                onClick={() => router.push("/blogs")}
+                onClick={() => router.push("/certificate")}
                 className="btn btn-accent w-40 text mx-auto font-bold py-3 px-6 lg:ml-0"
               >
                 See All

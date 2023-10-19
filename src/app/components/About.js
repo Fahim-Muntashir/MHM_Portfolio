@@ -80,7 +80,9 @@ const About = () => {
                 viewport={{ once: false, amount: 0.6 }}
                 className=" xl:block  rounded w-full uppercase font  text-accent hover:text-red-700 font-bold tracking-[2px] text-[13px] max-w-[184px]"
               >
-                See More in Details
+                <a href="http://localhost:3000/about " target="_blank">
+                  See More on detial
+                </a>{" "}
               </motion.button>
             </div>
           </div>

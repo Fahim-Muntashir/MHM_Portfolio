@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Link } from "react-scroll";
 import { useMediaQuery } from "react-responsive";
 // icons
 
 import { BiMenuAltRight, BiX } from "react-icons/bi";
+import Link from "next/link";
 
 const Header = () => {
   // Initialize state variables separately
@@ -35,14 +35,14 @@ const Header = () => {
   return (
     <header
       className={`${
-        header ? "bg-white shadow-md py-2" : "bg-transparent shadow-none py-4"
-      } fixed w-full max-w-[1920px] mx-auto z-20 transition-all duration-300`}
+        header ? "bg-white shadow-md py-2" : "bg-white shadow-none py-4"
+      } fixed w-full max-w-[1920px] mx-auto z-20 transition-all duration-300 top-0`}
     >
       <div className="xl:container mx-auto flex flex-col xl:flex-row xl:items-center xl:justify-between">
         <div className="flex justify-between items-center px-4">
           {/* {logo} */}
-          <Link
-            to="home"
+          <a
+            to="/home"
             smooth={desktopMode}
             spy={true}
             className="cursor-pointer"
@@ -53,7 +53,7 @@ const Header = () => {
               height={64}
               alt="logo"
             ></Image>
-          </Link>
+          </a>
 
           {/* Nav Open Menu */}
           <div
@@ -75,7 +75,7 @@ const Header = () => {
         >
           <Link
             className="cursor-pointer"
-            to="home"
+            href="/"
             activeClass="active"
             smooth={desktopMode}
             spy={true}
@@ -85,16 +85,17 @@ const Header = () => {
 
           <Link
             className="cursor-pointer"
-            to="about"
+            href="#about"
             activeClass="active"
             smooth={desktopMode}
             spy={true}
           >
             About
           </Link>
+          <a href="/#blog">Blogs</a>
           <Link
             className="cursor-pointer"
-            to="certificate"
+            href="#certificate"
             activeClass="active"
             smooth={desktopMode}
             spy={true}
@@ -103,7 +104,7 @@ const Header = () => {
           </Link>
           <Link
             className="cursor-pointer"
-            to="testimonials"
+            href="testimonials"
             activeClass="active"
             smooth={desktopMode}
             spy={true}
@@ -112,7 +113,7 @@ const Header = () => {
           </Link>
           <Link
             className="cursor-pointer"
-            to="contact"
+            href="contact"
             activeClass="active"
             smooth={desktopMode}
             spy={true}
@@ -121,7 +122,7 @@ const Header = () => {
           </Link>
           <Link
             className="xl:hidden btn btn-primary btn-sm max-w-[164px] mx-auto"
-            to="/"
+            href="/"
             activeClass="active"
             smooth={desktopMode}
             spy={true}

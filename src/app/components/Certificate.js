@@ -1,6 +1,10 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const certificate = () => {
+  const router = useRouter();
+
   return (
     <section id="certificate">
       <section className="dark:bg-gray-800 dark:text-gray-100">
@@ -17,7 +21,10 @@ const certificate = () => {
                 unwavering commitment to growth and inspire me to reach even
                 greater heights."
               </p>
-              <button className="btn btn-accent w-40 text mx-auto font-bold py-3 px-6 lg:ml-0">
+              <button
+                onClick={() => router.push("/blogs")}
+                className="btn btn-accent w-40 text mx-auto font-bold py-3 px-6 lg:ml-0"
+              >
                 See All
               </button>
             </div>

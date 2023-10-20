@@ -70,6 +70,22 @@ export default function RootLayout({ children }) {
               amar
             </a>
           </li>
+          <li>
+            <a
+              href="#"
+              className="flex bg-slate-900 border-blue-300 my-4 py-1 rounded text-white items-center justify-center"
+            >
+              amar
+            </a>
+          </li>
+          <li>
+            <a
+              href="dashboard/photography"
+              className="flex bg-slate-900 border-blue-300 my-4 py-1 rounded text-white items-center justify-center"
+            >
+              Img Add
+            </a>
+          </li>
         </ul>
       </nav>
 

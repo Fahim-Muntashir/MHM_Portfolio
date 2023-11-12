@@ -18,7 +18,7 @@ export default function Home() {
       <Certificate />
       <Blog />
       <Photography />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Cta />
       <BackToTopBtn />
       <Footer />

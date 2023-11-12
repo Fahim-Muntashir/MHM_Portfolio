@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const getBlogs = async () => {
@@ -17,7 +18,7 @@ const getBlogs = async () => {
 
 const Blog = async () => {
   const { blogs } = await getBlogs();
-  console.log(blogs);
+  const slicedBlogs = blogs.slice(0, 4);
   return (
     <section id="blog">
       <div className="bg-w w-full shadow-inner">
@@ -34,182 +35,53 @@ const Blog = async () => {
         <div class="lg:flex items-stretch md:mt-12 mt-8 container mx-auto">
           <div class="lg:w-full">
             <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
-              <div class="sm:w-full relative">
-                <div>
-                  <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
-                    12 April 2021
-                  </p>
-                  <div class="absolute bottom-0 left-0 p-6">
-                    <h2 class="text-xl font-semibold 5 text-white">
-                      The Decorated Ways
-                    </h2>
-                    <p class="text-base leading-4 text-white mt-2">
-                      Dive into minimalism
+              {slicedBlogs.map((blog) => (
+                <div className="sm:w-full relative" key={blog._id}>
+                  <div>
+                    <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
+                      {blog.createdAt}
                     </p>
-                    <a
-                      href="javascript:void(0)"
-                      class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline"
-                    >
-                      <p class="pr-2 text-sm font-medium leading-none">
-                        Read More
-                      </p>
-                      <svg
-                        class="fill-stroke"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <div className="absolute bottom-0 left-0 p-6">
+                      <h2 className="text-xl font-semibold text-white">
+                        {blog.title}
+                      </h2>
+                      <p className="text-base leading-4 text-white mt-2"></p>
+                      <a
+                        href="javascript:void(0)"
+                        className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline"
                       >
-                        <path
-                          d="M5.75 12.5L10.25 8L5.75 3.5"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </a>
+                        <Link
+                          href={`blogs/${blog._id}`}
+                          class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
+                        >
+                          Read Blog
+                        </Link>
+                        <svg
+                          className="fill-stroke"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.75 12.5L10.25 8L5.75 3.5"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
+                  <img
+                    src="https://i.ibb.co/DYxtCJq/img-1.png"
+                    className="w-full"
+                    alt="blog image"
+                  />
                 </div>
-                <img
-                  src="https://i.ibb.co/DYxtCJq/img-1.png"
-                  class="w-full"
-                  alt="chair"
-                />
-              </div>
-              <div class="sm:w-full sm:mt-0 mt-4 relative">
-                <div>
-                  <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
-                    12 April 2021
-                  </p>
-                  <div class="absolute bottom-0 left-0 p-6">
-                    <h2 class="text-xl font-semibold 5 text-white">
-                      The Decorated Ways
-                    </h2>
-                    <p class="text-base leading-4 text-white mt-2">
-                      Dive ffinto minimalism
-                    </p>
-                    <a
-                      href="javascript:void(0)"
-                      class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline"
-                    >
-                      <p class="pr-2 text-sm font-medium leading-none">
-                        Read More
-                      </p>
-                      <svg
-                        class="fill-stroke"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.75 12.5L10.25 8L5.75 3.5"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <img
-                  src="https://i.ibb.co/3C5HvxC/img-2.png"
-                  class="w-full"
-                  alt="wall design"
-                />
-              </div>
-              <div class="sm:w-full relative">
-                <div>
-                  <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
-                    12 April 2021
-                  </p>
-                  <div class="absolute bottom-0 left-0 p-6">
-                    <h2 class="text-xl font-semibold 5 text-white">
-                      The Decorated Ways
-                    </h2>
-                    <p class="text-base leading-4 text-white mt-2">
-                      Dive into minimalism
-                    </p>
-                    <a
-                      href="javascript:void(0)"
-                      class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline"
-                    >
-                      <p class="pr-2 text-sm font-medium leading-none">
-                        Read More
-                      </p>
-                      <svg
-                        class="fill-stroke"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.75 12.5L10.25 8L5.75 3.5"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <img
-                  src="https://i.ibb.co/DYxtCJq/img-1.png"
-                  class="w-full"
-                  alt="chair"
-                />
-              </div>
-              <div class="sm:w-full sm:mt-0 mt-4 relative">
-                <div>
-                  <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
-                    12 April 2021
-                  </p>
-                  <div class="absolute bottom-0 left-0 p-6">
-                    <h2 class="text-xl font-semibold 5 text-white">
-                      The Decorated Ways
-                    </h2>
-                    <p class="text-base leading-4 text-white mt-2">
-                      Dive ffinto minimalism
-                    </p>
-                    <a
-                      href="javascript:void(0)"
-                      class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline"
-                    >
-                      <p class="pr-2 text-sm font-medium leading-none">
-                        Read More
-                      </p>
-                      <svg
-                        class="fill-stroke"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.75 12.5L10.25 8L5.75 3.5"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <img
-                  src="https://i.ibb.co/3C5HvxC/img-2.png"
-                  class="w-full"
-                  alt="wall design"
-                />
-              </div>
+              ))}
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ const Hero = () => {
               viewport={{ once: false, amount: 0.6 }}
               className="h1"
             >
-              Hello I am <span className="text-accent">Mahmudul Hasan </span>
+              Hello I am <span className="text-blue-500">Mahmudul Hasan </span>
               <br />
               <Typewriter
                 words={[

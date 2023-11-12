@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "../components/Header";
 
 const getBlogs = async () => {
@@ -65,12 +66,12 @@ const page = async () => {
                 </p>
               </div>
               <div class="sm:flex sm:items-end sm:justify-end">
-                <a
-                  href="#"
+                <Link
+                  href={`blogs/${blogItem._id}`}
                   class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
                 >
                   Read Blog
-                </a>
+                </Link>
               </div>
             </div>
           </article>
